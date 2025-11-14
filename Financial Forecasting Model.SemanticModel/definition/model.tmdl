@@ -13,9 +13,8 @@ annotation PBI_QueryOrder = ["financials"]
 annotation PBI_ProTooling = ["DevMode"]
 
 ref table financials
-ref table DateTableTemplate_e082c64b-a8f7-498b-a3a5-8fa3dc9908cd
-ref table LocalDateTable_cb955422-be02-4ffd-be2c-4de1820718c9
 ref table RepMeasures
+ref table Date
 
 ref cultureInfo en-US
 

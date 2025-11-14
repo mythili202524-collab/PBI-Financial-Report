@@ -1,0 +1,97 @@
+table Date
+	lineageTag: 875aba5c-ae61-4208-a9a9-f934e45b61e3
+	dataCategory: Time
+
+	column Date
+		isHidden
+		isKey
+		formatString: Short Date
+		lineageTag: 3dd4d552-97b0-4941-b40f-af09039c3447
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		isHidden
+		formatString: 0
+		lineageTag: 159720c2-c003-410f-bee0-5ccc995baa84
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		isHidden
+		lineageTag: 7a3b59ca-2f23-426f-9260-dcea616487c4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month]
+		sortByColumn: MonthNr
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNr
+		isHidden
+		formatString: 0
+		lineageTag: 2092e062-540f-4a4e-b4cb-582f050eeb22
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [MonthNr]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year/Month
+		isHidden
+		lineageTag: 524c19bb-04f2-4c82-834c-58409aeff720
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Year/Month]
+
+		annotation SummarizationSetBy = Automatic
+
+	column QtrYear
+		isHidden
+		lineageTag: bf46ad6b-ea1c-4cc2-8cd5-b955d5f132bf
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [QtrYear]
+		sortByColumn: QtrNr
+
+		annotation SummarizationSetBy = Automatic
+
+	column QtrNr
+		isHidden
+		formatString: 0
+		lineageTag: 52a0f567-ce78-4217-9e74-83d378c7d4f3
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [QtrNr]
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Dt Hierarchy'
+		lineageTag: 879918c1-4bb1-48aa-92bc-0100765501f9
+
+		level Year
+			lineageTag: fe5626e3-b7e9-4f79-bbc7-c45a4e8603bb
+			column: Year
+
+		level QtrYear
+			lineageTag: 7afe4cfb-49f3-48eb-b5b0-dd8226045547
+			column: QtrYear
+
+		level Month
+			lineageTag: bf953313-fdcc-4cd1-acfb-53def1e54ad0
+			column: Month
+
+	partition Date = calculated
+		mode: import
+		source = ADDCOLUMNS(  CALENDAR(   Min(financials[Date]),   MAX(financials[Date])  ),  "Year", YEAR([Date]),  "Month", FORMAT([Date], "mmmm", "En-US"),"QtrYear", "Q" & QUARTER([Date]),  "MonthNr", MONTH([Date]), "QtrNr", QUARTER([Date]), "Year/Month", FORMAT([Date], "yyyy-mm") )
+
+	annotation PBI_Id = 1b0265a404ab406392e39a2554285fa9
+

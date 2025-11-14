@@ -8,6 +8,7 @@ table RepMeasures
 		lineageTag: 8bc90e3b-f026-49e6-b826-21e526ff8d6d
 
 	column Column
+		isHidden
 		formatString: 0
 		lineageTag: 923cccc8-51d3-4989-8c96-153db9f565cf
 		summarizeBy: sum

@@ -81,11 +81,11 @@ table financials
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column ' Sales'
+	column Sales
 		dataType: double
 		lineageTag: 013c562f-a52e-43f0-9a87-1d36e212aa9c
 		summarizeBy: sum
-		sourceColumn: " Sales"
+		sourceColumn: Sales
 
 		annotation SummarizationSetBy = Automatic
 
@@ -113,15 +113,12 @@ table financials
 
 	column Date
 		dataType: dateTime
-		formatString: Long Date
+		formatString: Short Date
 		lineageTag: b8183342-7ff3-4b36-b45b-f2ec51718e9a
 		summarizeBy: none
 		sourceColumn: Date
 
-		variation Variation
-			isDefault
-			relationship: 5469c362-49ea-4913-bfb0-81bd8b8b82ed
-			defaultHierarchy: LocalDateTable_cb955422-be02-4ffd-be2c-4de1820718c9.'Date Hierarchy'
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -159,9 +156,10 @@ table financials
 				let
 				    Source = Excel.Workbook(File.Contents("C:\WiseOwl\PBI Projects\Financial Forecasting Model\Financial Sample.xlsx"), null, true),
 				    financials_Table = Source{[Item="financials",Kind="Table"]}[Data],
-				    #"Changed Type" = Table.TransformColumnTypes(financials_Table,{{"Segment", type text}, {"Country", type text}, {"Product", type text}, {"Discount Band", type text}, {"Units Sold", type number}, {"Manufacturing Price", Int64.Type}, {"Sale Price", Int64.Type}, {"Gross Sales", type number}, {"Discounts", type number}, {" Sales", type number}, {"COGS", type number}, {"Profit", type number}, {"Date", type date}, {"Month Number", Int64.Type}, {"Month Name", type text}, {"Year", Int64.Type}})
+				    #"Changed Type" = Table.TransformColumnTypes(financials_Table,{{"Segment", type text}, {"Country", type text}, {"Product", type text}, {"Discount Band", type text}, {"Units Sold", type number}, {"Manufacturing Price", Int64.Type}, {"Sale Price", Int64.Type}, {"Gross Sales", type number}, {"Discounts", type number}, {" Sales", type number}, {"COGS", type number}, {"Profit", type number}, {"Date", type date}, {"Month Number", Int64.Type}, {"Month Name", type text}, {"Year", Int64.Type}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{" Sales", "Sales"}})
 				in
-				    #"Changed Type"
+				    #"Renamed Columns"
 
 	annotation PBI_ResultType = Table
 

@@ -21,24 +21,18 @@
                   "Expression": {
                     "Hierarchy": {
                       "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "financials"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Date"
+                        "SourceRef": {
+                          "Entity": "Date"
                         }
                       },
-                      "Hierarchy": "Date Hierarchy"
+                      "Hierarchy": "Dt Hierarchy"
                     }
                   },
                   "Level": "Year"
                 }
               },
-              "queryRef": "financials.Date.Variation.Date Hierarchy.Year",
-              "nativeQueryRef": "Date Year",
+              "queryRef": "Date.Dt Hierarchy.Year",
+              "nativeQueryRef": "Dt Hierarchy Year",
               "active": true
             },
             {
@@ -47,25 +41,19 @@
                   "Expression": {
                     "Hierarchy": {
                       "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "financials"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Date"
+                        "SourceRef": {
+                          "Entity": "Date"
                         }
                       },
-                      "Hierarchy": "Date Hierarchy"
+                      "Hierarchy": "Dt Hierarchy"
                     }
                   },
-                  "Level": "Quarter"
+                  "Level": "QtrYear"
                 }
               },
-              "queryRef": "financials.Date.Variation.Date Hierarchy.Quarter",
-              "nativeQueryRef": "Date Quarter",
-              "active": false
+              "queryRef": "Date.Dt Hierarchy.QtrYear",
+              "nativeQueryRef": "Dt Hierarchy QtrYear",
+              "active": true
             },
             {
               "field": {
@@ -73,24 +61,18 @@
                   "Expression": {
                     "Hierarchy": {
                       "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "financials"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Date"
+                        "SourceRef": {
+                          "Entity": "Date"
                         }
                       },
-                      "Hierarchy": "Date Hierarchy"
+                      "Hierarchy": "Dt Hierarchy"
                     }
                   },
                   "Level": "Month"
                 }
               },
-              "queryRef": "financials.Date.Variation.Date Hierarchy.Month",
-              "nativeQueryRef": "Date Month",
+              "queryRef": "Date.Dt Hierarchy.Month",
+              "nativeQueryRef": "Dt Hierarchy Month",
               "active": false
             }
           ]
@@ -375,79 +357,34 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "028602fa328d04e7bc2c",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "PropertyVariationSource": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "financials"
-                      }
-                    },
-                    "Name": "Variation",
-                    "Property": "Date"
-                  }
-                },
-                "Hierarchy": "Date Hierarchy"
-              }
-            },
-            "Level": "Year"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
         "name": "df783f5671379a598211",
         "field": {
-          "HierarchyLevel": {
+          "Column": {
             "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "PropertyVariationSource": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "financials"
-                      }
-                    },
-                    "Name": "Variation",
-                    "Property": "Date"
-                  }
-                },
-                "Hierarchy": "Date Hierarchy"
+              "SourceRef": {
+                "Entity": "financials"
               }
             },
-            "Level": "Quarter"
+            "Property": "Date"
           }
         },
-        "type": "Categorical"
+        "type": "Categorical",
+        "howCreated": "User"
       },
       {
         "name": "e7c70561b7bc8c26a860",
         "field": {
-          "HierarchyLevel": {
+          "Column": {
             "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "PropertyVariationSource": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "financials"
-                      }
-                    },
-                    "Name": "Variation",
-                    "Property": "Date"
-                  }
-                },
-                "Hierarchy": "Date Hierarchy"
+              "SourceRef": {
+                "Entity": "financials"
               }
             },
-            "Level": "Month"
+            "Property": "Date"
           }
         },
-        "type": "Categorical"
+        "type": "Categorical",
+        "howCreated": "User"
       },
       {
         "name": "623ceb065228c062c9da",
@@ -467,6 +404,122 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "ca2b631c057297572d66",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Date"
+                  }
+                },
+                "Hierarchy": "Dt Hierarchy"
+              }
+            },
+            "Level": "Year"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "0201453a4535c9675e0c",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Date"
+                  }
+                },
+                "Hierarchy": "Dt Hierarchy"
+              }
+            },
+            "Level": "QtrYear"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "170bd67c49e58cee6133",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Date"
+                  }
+                },
+                "Hierarchy": "Dt Hierarchy"
+              }
+            },
+            "Level": "Month"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "90a2fe6fa0b3cae9d084",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Date"
+                  }
+                },
+                "Hierarchy": "Dt Hierarchy"
+              }
+            },
+            "Level": "Year"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "Date",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "d"
+                          }
+                        },
+                        "Property": "Year"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "2014L"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "Drill"
       }
     ]
   }

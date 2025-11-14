@@ -21,24 +21,18 @@
                   "Expression": {
                     "Hierarchy": {
                       "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "financials"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Date"
+                        "SourceRef": {
+                          "Entity": "Date"
                         }
                       },
-                      "Hierarchy": "Date Hierarchy"
+                      "Hierarchy": "Dt Hierarchy"
                     }
                   },
                   "Level": "Year"
                 }
               },
-              "queryRef": "financials.Date.Variation.Date Hierarchy.Year",
-              "nativeQueryRef": "Date Year",
+              "queryRef": "Date.Dt Hierarchy.Year",
+              "nativeQueryRef": "Dt Hierarchy Year",
               "active": true
             },
             {
@@ -47,24 +41,18 @@
                   "Expression": {
                     "Hierarchy": {
                       "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "financials"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Date"
+                        "SourceRef": {
+                          "Entity": "Date"
                         }
                       },
-                      "Hierarchy": "Date Hierarchy"
+                      "Hierarchy": "Dt Hierarchy"
                     }
                   },
-                  "Level": "Quarter"
+                  "Level": "QtrYear"
                 }
               },
-              "queryRef": "financials.Date.Variation.Date Hierarchy.Quarter",
-              "nativeQueryRef": "Date Quarter",
+              "queryRef": "Date.Dt Hierarchy.QtrYear",
+              "nativeQueryRef": "Dt Hierarchy QtrYear",
               "active": false
             },
             {
@@ -73,24 +61,18 @@
                   "Expression": {
                     "Hierarchy": {
                       "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "financials"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Date"
+                        "SourceRef": {
+                          "Entity": "Date"
                         }
                       },
-                      "Hierarchy": "Date Hierarchy"
+                      "Hierarchy": "Dt Hierarchy"
                     }
                   },
                   "Level": "Month"
                 }
               },
-              "queryRef": "financials.Date.Variation.Date Hierarchy.Month",
-              "nativeQueryRef": "Date Month",
+              "queryRef": "Date.Dt Hierarchy.Month",
+              "nativeQueryRef": "Dt Hierarchy Month",
               "active": false
             }
           ]
@@ -107,14 +89,14 @@
                           "Entity": "financials"
                         }
                       },
-                      "Property": " Sales"
+                      "Property": "Sales"
                     }
                   },
                   "Function": 0
                 }
               },
               "queryRef": "Sum(financials. Sales)",
-              "nativeQueryRef": "Sum of  Sales"
+              "nativeQueryRef": "Sum of Sales"
             }
           ]
         }
@@ -134,6 +116,44 @@
           }
         }
       ],
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "lineStyles": [
+        {
+          "properties": {
+            "showMarker": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "markerColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 8,
+                      "Percent": -0.25
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
       "forecast": [
         {
           "properties": {
@@ -147,7 +167,7 @@
             "displayName": {
               "expr": {
                 "Literal": {
-                  "Value": "'Sales Forecast'"
+                  "Value": "'Forecast 1'"
                 }
               }
             },
@@ -200,13 +220,6 @@
                   "Value": "'cardinal'"
                 }
               }
-            },
-            "bandLineShow": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
             }
           },
           "selector": {
@@ -228,7 +241,7 @@
             "displayName": {
               "expr": {
                 "Literal": {
-                  "Value": "'Average Sales'"
+                  "Value": "'Avg Sales'"
                 }
               }
             },
@@ -244,22 +257,10 @@
                 }
               }
             },
-            "lineColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 4,
-                      "Percent": -0.5
-                    }
-                  }
-                }
-              }
-            },
-            "style": {
+            "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "'dotted'"
+                  "Value": "32D"
                 }
               }
             },
@@ -281,44 +282,6 @@
           "selector": {
             "metadata": "Sum(financials. Sales)",
             "id": "1"
-          }
-        }
-      ],
-      "labels": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "lineStyles": [
-        {
-          "properties": {
-            "showMarker": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "markerColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 8,
-                      "Percent": -0.25
-                    }
-                  }
-                }
-              }
-            }
           }
         }
       ]
@@ -394,7 +357,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "33f638106a465989046d",
+        "name": "f5ce198ce0629466747c",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -404,7 +367,7 @@
                     "Entity": "financials"
                   }
                 },
-                "Property": " Sales"
+                "Property": "Sales"
               }
             },
             "Function": 0
@@ -413,23 +376,17 @@
         "type": "Advanced"
       },
       {
-        "name": "696bd9de6c3519389a47",
+        "name": "f675d70198c855c90905",
         "field": {
           "HierarchyLevel": {
             "Expression": {
               "Hierarchy": {
                 "Expression": {
-                  "PropertyVariationSource": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "financials"
-                      }
-                    },
-                    "Name": "Variation",
-                    "Property": "Date"
+                  "SourceRef": {
+                    "Entity": "Date"
                   }
                 },
-                "Hierarchy": "Date Hierarchy"
+                "Hierarchy": "Dt Hierarchy"
               }
             },
             "Level": "Year"
@@ -438,48 +395,36 @@
         "type": "Advanced"
       },
       {
-        "name": "53a9cfb9e65a26a867c2",
+        "name": "6c4b1c8f3dbe4c97cd9c",
         "field": {
           "HierarchyLevel": {
             "Expression": {
               "Hierarchy": {
                 "Expression": {
-                  "PropertyVariationSource": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "financials"
-                      }
-                    },
-                    "Name": "Variation",
-                    "Property": "Date"
+                  "SourceRef": {
+                    "Entity": "Date"
                   }
                 },
-                "Hierarchy": "Date Hierarchy"
+                "Hierarchy": "Dt Hierarchy"
               }
             },
-            "Level": "Quarter"
+            "Level": "QtrYear"
           }
         },
         "type": "Categorical"
       },
       {
-        "name": "5f18f844a9172148251d",
+        "name": "c53f739c0a5de5d84574",
         "field": {
           "HierarchyLevel": {
             "Expression": {
               "Hierarchy": {
                 "Expression": {
-                  "PropertyVariationSource": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "financials"
-                      }
-                    },
-                    "Name": "Variation",
-                    "Property": "Date"
+                  "SourceRef": {
+                    "Entity": "Date"
                   }
                 },
-                "Hierarchy": "Date Hierarchy"
+                "Hierarchy": "Dt Hierarchy"
               }
             },
             "Level": "Month"

@@ -132,7 +132,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Canada'"
+                                "Value": "'Mexico'"
                               }
                             }
                           ]
@@ -255,5 +255,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "9b27b2a0b60109d53151",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "financials"
+              }
+            },
+            "Property": "Country"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

@@ -13,6 +13,29 @@
     "visualType": "advancedSlicerVisual",
     "query": {
       "queryState": {
+        "Label": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "financials"
+                        }
+                      },
+                      "Property": "Segment"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(financials.Segment)",
+              "nativeQueryRef": "First Segment"
+            }
+          ]
+        },
         "Values": {
           "projections": [
             {
@@ -72,17 +95,60 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Enterprise'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'Midmarket'"
+                                "Value": "'Small Business'"
                               }
                             }
                           ]
+                        ]
+                      }
+                    },
+                    "Annotations": {
+                      "filterExpressionMetadata": {
+                        "expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "financials"
+                                }
+                              },
+                              "Property": "Segment"
+                            }
+                          }
+                        ],
+                        "decomposedIdentities": {
+                          "values": [
+                            [
+                              {
+                                "0": [
+                                  {
+                                    "Literal": {
+                                      "Value": "'Small Business'"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          ],
+                          "columns": [
+                            {
+                              "value": {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "financials"
+                                    }
+                                  },
+                                  "Property": "Segment"
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        "valueMap": [
+                          {
+                            "0": "Small Business"
+                          }
                         ]
                       }
                     }
@@ -265,11 +331,43 @@
                   }
                 }
               }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
             }
           },
           "selector": {
-            "metadata": "financials.Segment",
             "id": "selection:selected"
+          }
+        },
+        {
+          "properties": {
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "interaction:hover"
           }
         }
       ],
@@ -308,28 +406,6 @@
       "background": [
         {
           "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "transparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "19D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "financials.Segment",
-            "id": "selection:selected"
-          }
-        },
-        {
-          "properties": {
             "color": {
               "solid": {
                 "color": {
@@ -362,6 +438,22 @@
             ],
             "id": "selection:selected",
             "hierarchyMatching": 1
+          }
+        }
+      ],
+      "label": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
           }
         }
       ]
@@ -490,8 +582,58 @@
             }
           }
         }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "42bbea0fd12895bd5029",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "financials"
+              }
+            },
+            "Property": "Segment"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "af8b2d8a0cc302300708",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "financials"
+                  }
+                },
+                "Property": "Segment"
+              }
+            },
+            "Function": 3
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
