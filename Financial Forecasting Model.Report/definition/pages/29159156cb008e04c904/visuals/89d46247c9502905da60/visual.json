@@ -26,7 +26,7 @@
                   "Property": "Country"
                 }
               },
-              "queryRef": "financials.Country",
+              "queryRef": "financials (2).Country",
               "nativeQueryRef": "Country",
               "active": true
             }
@@ -132,7 +132,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Mexico'"
+                                "Value": "'Germany'"
                               }
                             }
                           ]
@@ -259,7 +259,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "9b27b2a0b60109d53151",
+        "name": "923e356a4be40303e031",
         "field": {
           "Column": {
             "Expression": {

@@ -26,7 +26,7 @@
                   "Property": "Segment"
                 }
               },
-              "queryRef": "financials.Segment",
+              "queryRef": "financials (2).Segment",
               "nativeQueryRef": "Segment"
             }
           ]
@@ -72,7 +72,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Government'"
+                                "Value": "'Midmarket'"
                               }
                             }
                           ]
@@ -247,6 +247,39 @@
         },
         {
           "properties": {
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "interaction:hover"
+          }
+        },
+        {
+          "properties": {
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
             "fontColor": {
               "solid": {
                 "color": {
@@ -261,7 +294,6 @@
             }
           },
           "selector": {
-            "metadata": "financials.Segment",
             "id": "selection:selected"
           }
         }
@@ -299,28 +331,6 @@
         }
       ],
       "background": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "transparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "19D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "financials.Segment",
-            "id": "selection:selected"
-          }
-        },
         {
           "properties": {
             "color": {
@@ -486,5 +496,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "41a3a5e735ea40520c90",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "financials"
+              }
+            },
+            "Property": "Segment"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

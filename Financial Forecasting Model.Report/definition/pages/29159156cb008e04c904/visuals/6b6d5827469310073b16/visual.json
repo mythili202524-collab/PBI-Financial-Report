@@ -13,29 +13,6 @@
     "visualType": "advancedSlicerVisual",
     "query": {
       "queryState": {
-        "Label": {
-          "projections": [
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "financials"
-                        }
-                      },
-                      "Property": "Segment"
-                    }
-                  },
-                  "Function": 3
-                }
-              },
-              "queryRef": "Min(financials.Segment)",
-              "nativeQueryRef": "First Segment"
-            }
-          ]
-        },
         "Values": {
           "projections": [
             {
@@ -49,7 +26,7 @@
                   "Property": "Segment"
                 }
               },
-              "queryRef": "financials.Segment",
+              "queryRef": "financials (2).Segment",
               "nativeQueryRef": "Segment"
             }
           ]
@@ -95,60 +72,10 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Small Business'"
+                                "Value": "'Midmarket'"
                               }
                             }
                           ]
-                        ]
-                      }
-                    },
-                    "Annotations": {
-                      "filterExpressionMetadata": {
-                        "expressions": [
-                          {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Entity": "financials"
-                                }
-                              },
-                              "Property": "Segment"
-                            }
-                          }
-                        ],
-                        "decomposedIdentities": {
-                          "values": [
-                            [
-                              {
-                                "0": [
-                                  {
-                                    "Literal": {
-                                      "Value": "'Small Business'"
-                                    }
-                                  }
-                                ]
-                              }
-                            ]
-                          ],
-                          "columns": [
-                            {
-                              "value": {
-                                "Column": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "financials"
-                                    }
-                                  },
-                                  "Property": "Segment"
-                                }
-                              }
-                            }
-                          ]
-                        },
-                        "valueMap": [
-                          {
-                            "0": "Small Business"
-                          }
                         ]
                       }
                     }
@@ -602,7 +529,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "42bbea0fd12895bd5029",
+        "name": "cf109a24e0d818273920",
         "field": {
           "Column": {
             "Expression": {
@@ -614,25 +541,6 @@
           }
         },
         "type": "Categorical"
-      },
-      {
-        "name": "af8b2d8a0cc302300708",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "financials"
-                  }
-                },
-                "Property": "Segment"
-              }
-            },
-            "Function": 3
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

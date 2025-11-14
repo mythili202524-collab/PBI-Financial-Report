@@ -26,7 +26,7 @@
                   "Property": "Country"
                 }
               },
-              "queryRef": "financials.Country",
+              "queryRef": "financials (2).Country",
               "nativeQueryRef": "Country",
               "active": true
             }
@@ -132,7 +132,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Canada'"
+                                "Value": "'France'"
                               }
                             }
                           ]
@@ -255,5 +255,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "35232f2a0bd79d732118",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "financials"
+              }
+            },
+            "Property": "Country"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

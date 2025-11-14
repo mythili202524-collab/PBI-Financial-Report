@@ -53,7 +53,7 @@
               },
               "queryRef": "Date.Dt Hierarchy.QtrYear",
               "nativeQueryRef": "Dt Hierarchy QtrYear",
-              "active": true
+              "active": false
             },
             {
               "field": {
@@ -95,8 +95,8 @@
                   "Function": 0
                 }
               },
-              "queryRef": "Sum(financials.Units Sold)",
-              "nativeQueryRef": "Sum of Units Sold"
+              "queryRef": "Sum(financials (2).Units Sold)",
+              "nativeQueryRef": "Sum of Units Sold1"
             }
           ]
         }
@@ -223,7 +223,7 @@
             }
           },
           "selector": {
-            "metadata": "Sum(financials.Units Sold)",
+            "metadata": "Sum(financials (2).Units Sold)",
             "id": "1"
           }
         }
@@ -250,7 +250,7 @@
                 "Aggregation": {
                   "Expression": {
                     "SelectRef": {
-                      "ExpressionName": "Sum(financials.Units Sold)"
+                      "ExpressionName": "Sum(financials (2).Units Sold)"
                     }
                   },
                   "Function": 1
@@ -280,7 +280,7 @@
             }
           },
           "selector": {
-            "metadata": "Sum(financials.Units Sold)",
+            "metadata": "Sum(financials (2).Units Sold)",
             "id": "1"
           }
         }
@@ -387,25 +387,6 @@
         "howCreated": "User"
       },
       {
-        "name": "623ceb065228c062c9da",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "financials"
-                  }
-                },
-                "Property": "Units Sold"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
         "name": "ca2b631c057297572d66",
         "field": {
           "HierarchyLevel": {
@@ -463,63 +444,23 @@
         "type": "Categorical"
       },
       {
-        "name": "90a2fe6fa0b3cae9d084",
+        "name": "6de96f8d924d305bab8d",
         "field": {
-          "HierarchyLevel": {
+          "Aggregation": {
             "Expression": {
-              "Hierarchy": {
+              "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Date"
+                    "Entity": "financials"
                   }
                 },
-                "Hierarchy": "Dt Hierarchy"
+                "Property": "Units Sold"
               }
             },
-            "Level": "Year"
+            "Function": 0
           }
         },
-        "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "d",
-              "Entity": "Date",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "d"
-                          }
-                        },
-                        "Property": "Year"
-                      }
-                    }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "2014L"
-                        }
-                      }
-                    ]
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        "howCreated": "Drill"
+        "type": "Advanced"
       }
     ]
   }

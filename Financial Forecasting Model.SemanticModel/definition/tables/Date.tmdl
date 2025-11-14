@@ -91,7 +91,7 @@ table Date
 
 	partition Date = calculated
 		mode: import
-		source = ADDCOLUMNS(  CALENDAR(   Min(financials[Date]),   MAX(financials[Date])  ),  "Year", YEAR([Date]),  "Month", FORMAT([Date], "mmmm", "En-US"),"QtrYear", "Q" & QUARTER([Date]),  "MonthNr", MONTH([Date]), "QtrNr", QUARTER([Date]), "Year/Month", FORMAT([Date], "yyyy-mm") )
+		source = ADDCOLUMNS(  CALENDAR(   Min('financials'[Date]),   MAX('financials'[Date])  ),  "Year", YEAR([Date]),  "Month", FORMAT([Date], "mmmm", "En-US"),"QtrYear", "Q" & QUARTER([Date]),  "MonthNr", MONTH([Date]), "QtrNr", QUARTER([Date]), "Year/Month", FORMAT([Date], "yyyy-mm") )
 
 	annotation PBI_Id = 1b0265a404ab406392e39a2554285fa9
 

@@ -1,10 +1,10 @@
 table RepMeasures
 	lineageTag: 9059d824-03d8-41c5-83b8-74f902430207
 
-	measure SelSegment = "Sales Forecast by Year & Quarter for " & SELECTEDVALUE(financials[Segment])& " segment - "  & SELECTEDVALUE(financials[Country])& " country"
+	measure SelSegment = "Sales Forecast by Year & Quarter for " & SELECTEDVALUE('financials'[Segment])& " segment - "  & SELECTEDVALUE('financials'[Country])& " country"
 		lineageTag: 874bde78-601d-46bd-9b11-ad225d3b4032
 
-	measure SelSegment_Units = "Units Forecast by Year & Quarter for " & SELECTEDVALUE(financials[Segment])& " segment - "  & SELECTEDVALUE(financials[Country])& " country"
+	measure SelSegment_Units = "Units Forecast by Year & Quarter for " & SELECTEDVALUE('financials'[Segment])& " segment - "  & SELECTEDVALUE('financials'[Country])& " country"
 		lineageTag: 8bc90e3b-f026-49e6-b826-21e526ff8d6d
 
 	column Column

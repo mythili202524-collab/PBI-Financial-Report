@@ -12,9 +12,9 @@ annotation PBI_QueryOrder = ["financials"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
-ref table financials
 ref table RepMeasures
 ref table Date
+ref table financials
 
 ref cultureInfo en-US
 

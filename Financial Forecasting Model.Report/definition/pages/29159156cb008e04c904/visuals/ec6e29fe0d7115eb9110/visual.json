@@ -89,14 +89,14 @@
                           "Entity": "financials"
                         }
                       },
-                      "Property": "Sales"
+                      "Property": " Sales"
                     }
                   },
                   "Function": 0
                 }
               },
-              "queryRef": "Sum(financials. Sales)",
-              "nativeQueryRef": "Sum of Sales"
+              "queryRef": "Sum(financials (2). Sales)",
+              "nativeQueryRef": "Sum of  Sales"
             }
           ]
         }
@@ -223,7 +223,7 @@
             }
           },
           "selector": {
-            "metadata": "Sum(financials. Sales)",
+            "metadata": "Sum(financials (2). Sales)",
             "id": "1"
           }
         }
@@ -250,17 +250,17 @@
                 "Aggregation": {
                   "Expression": {
                     "SelectRef": {
-                      "ExpressionName": "Sum(financials. Sales)"
+                      "ExpressionName": "Sum(financials (2). Sales)"
                     }
                   },
                   "Function": 1
                 }
               }
             },
-            "transparency": {
+            "style": {
               "expr": {
                 "Literal": {
-                  "Value": "32D"
+                  "Value": "'dotted'"
                 }
               }
             },
@@ -280,7 +280,7 @@
             }
           },
           "selector": {
-            "metadata": "Sum(financials. Sales)",
+            "metadata": "Sum(financials (2). Sales)",
             "id": "1"
           }
         }
@@ -357,25 +357,6 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "f5ce198ce0629466747c",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "financials"
-                  }
-                },
-                "Property": "Sales"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
         "name": "f675d70198c855c90905",
         "field": {
           "HierarchyLevel": {
@@ -431,6 +412,25 @@
           }
         },
         "type": "Categorical"
+      },
+      {
+        "name": "ec5689a040e296a91028",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "financials"
+                  }
+                },
+                "Property": " Sales"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }
