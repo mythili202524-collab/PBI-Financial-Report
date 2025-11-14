@@ -65,7 +65,7 @@
               },
               "queryRef": "financials.Date.Variation.Date Hierarchy.Quarter",
               "nativeQueryRef": "Date Quarter",
-              "active": true
+              "active": false
             },
             {
               "field": {
@@ -91,7 +91,7 @@
               },
               "queryRef": "financials.Date.Variation.Date Hierarchy.Month",
               "nativeQueryRef": "Date Month",
-              "active": true
+              "active": false
             }
           ]
         },
@@ -394,7 +394,26 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "4bde792d2ee42ba8a2b0",
+        "name": "33f638106a465989046d",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "financials"
+                  }
+                },
+                "Property": " Sales"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "696bd9de6c3519389a47",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -416,47 +435,57 @@
             "Level": "Year"
           }
         },
-        "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "l",
-              "Entity": "LocalDateTable_cb955422-be02-4ffd-be2c-4de1820718c9",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "l"
-                          }
-                        },
-                        "Property": "Year"
+        "type": "Advanced"
+      },
+      {
+        "name": "53a9cfb9e65a26a867c2",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "financials"
                       }
-                    }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "2013L"
-                        }
-                      }
-                    ]
-                  ]
-                }
+                    },
+                    "Name": "Variation",
+                    "Property": "Date"
+                  }
+                },
+                "Hierarchy": "Date Hierarchy"
               }
-            }
-          ]
+            },
+            "Level": "Quarter"
+          }
         },
-        "howCreated": "Drill"
+        "type": "Categorical"
+      },
+      {
+        "name": "5f18f844a9172148251d",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "financials"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "Date"
+                  }
+                },
+                "Hierarchy": "Date Hierarchy"
+              }
+            },
+            "Level": "Month"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

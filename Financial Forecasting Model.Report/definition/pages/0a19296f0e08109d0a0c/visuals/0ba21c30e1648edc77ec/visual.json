@@ -107,14 +107,14 @@
                           "Entity": "financials"
                         }
                       },
-                      "Property": " Sales"
+                      "Property": "Units Sold"
                     }
                   },
                   "Function": 0
                 }
               },
-              "queryRef": "Sum(financials. Sales)",
-              "nativeQueryRef": "Sum of  Sales"
+              "queryRef": "Sum(financials.Units Sold)",
+              "nativeQueryRef": "Sum of Units Sold"
             }
           ]
         }
@@ -134,6 +134,44 @@
           }
         }
       ],
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "lineStyles": [
+        {
+          "properties": {
+            "showMarker": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "markerColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 8,
+                      "Percent": -0.25
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
       "forecast": [
         {
           "properties": {
@@ -147,7 +185,7 @@
             "displayName": {
               "expr": {
                 "Literal": {
-                  "Value": "'Sales Forecast'"
+                  "Value": "'Forecast 1'"
                 }
               }
             },
@@ -200,17 +238,10 @@
                   "Value": "'cardinal'"
                 }
               }
-            },
-            "bandLineShow": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
             }
           },
           "selector": {
-            "metadata": "Sum(financials. Sales)",
+            "metadata": "Sum(financials.Units Sold)",
             "id": "1"
           }
         }
@@ -228,7 +259,7 @@
             "displayName": {
               "expr": {
                 "Literal": {
-                  "Value": "'Average Sales'"
+                  "Value": "'Avg Units Sold'"
                 }
               }
             },
@@ -237,22 +268,10 @@
                 "Aggregation": {
                   "Expression": {
                     "SelectRef": {
-                      "ExpressionName": "Sum(financials. Sales)"
+                      "ExpressionName": "Sum(financials.Units Sold)"
                     }
                   },
                   "Function": 1
-                }
-              }
-            },
-            "lineColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 4,
-                      "Percent": -0.5
-                    }
-                  }
                 }
               }
             },
@@ -279,46 +298,8 @@
             }
           },
           "selector": {
-            "metadata": "Sum(financials. Sales)",
+            "metadata": "Sum(financials.Units Sold)",
             "id": "1"
-          }
-        }
-      ],
-      "labels": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "lineStyles": [
-        {
-          "properties": {
-            "showMarker": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "markerColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 8,
-                      "Percent": -0.25
-                    }
-                  }
-                }
-              }
-            }
           }
         }
       ]
@@ -335,7 +316,7 @@
                       "Entity": "RepMeasures"
                     }
                   },
-                  "Property": "SelSegment"
+                  "Property": "SelSegment_Units"
                 }
               }
             },
@@ -390,5 +371,103 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "028602fa328d04e7bc2c",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "financials"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "Date"
+                  }
+                },
+                "Hierarchy": "Date Hierarchy"
+              }
+            },
+            "Level": "Year"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "df783f5671379a598211",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "financials"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "Date"
+                  }
+                },
+                "Hierarchy": "Date Hierarchy"
+              }
+            },
+            "Level": "Quarter"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e7c70561b7bc8c26a860",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "financials"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "Date"
+                  }
+                },
+                "Hierarchy": "Date Hierarchy"
+              }
+            },
+            "Level": "Month"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "623ceb065228c062c9da",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "financials"
+                  }
+                },
+                "Property": "Units Sold"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

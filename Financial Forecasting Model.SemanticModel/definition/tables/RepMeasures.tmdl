@@ -4,6 +4,9 @@ table RepMeasures
 	measure SelSegment = "Sales Forecast by Year & Quarter for " & SELECTEDVALUE(financials[Segment])& " segment - "  & SELECTEDVALUE(financials[Country])& " country"
 		lineageTag: 874bde78-601d-46bd-9b11-ad225d3b4032
 
+	measure SelSegment_Units = "Units Forecast by Year & Quarter for " & SELECTEDVALUE(financials[Segment])& " segment - "  & SELECTEDVALUE(financials[Country])& " country"
+		lineageTag: 8bc90e3b-f026-49e6-b826-21e526ff8d6d
+
 	column Column
 		formatString: 0
 		lineageTag: 923cccc8-51d3-4989-8c96-153db9f565cf
