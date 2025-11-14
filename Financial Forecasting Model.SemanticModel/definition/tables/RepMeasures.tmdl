@@ -1,0 +1,23 @@
+table RepMeasures
+	lineageTag: 9059d824-03d8-41c5-83b8-74f902430207
+
+	measure SelSegment = "Sales Forecast by Year & Quarter for " & SELECTEDVALUE(financials[Segment])& " segment - "  & SELECTEDVALUE(financials[Country])& " country"
+		lineageTag: 874bde78-601d-46bd-9b11-ad225d3b4032
+
+	column Column
+		formatString: 0
+		lineageTag: 923cccc8-51d3-4989-8c96-153db9f565cf
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition RepMeasures = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = 3bb79b8683574d39a936ec66070cb988
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+
