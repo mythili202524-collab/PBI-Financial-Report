@@ -7,6 +7,9 @@ table RepMeasures
 	measure SelSegment_Units = "Units Forecast by Year & Quarter for " & SELECTEDVALUE('financials'[Segment])& " segment - "  & SELECTEDVALUE('financials'[Country])& " country"
 		lineageTag: 8bc90e3b-f026-49e6-b826-21e526ff8d6d
 
+	measure SelFieldParam = FIRSTNONBLANKVALUE('Financial Param Metric'[Financial Param Metric])
+		lineageTag: 4fa09b96-c9b6-4b47-933a-433eae03df71
+
 	column Column
 		isHidden
 		formatString: 0

@@ -1,0 +1,50 @@
+table 'Financial Param Metric'
+	lineageTag: 1b2e6e6f-80ff-4d75-9fbc-c82d04649b88
+
+	column 'Financial Param Metric'
+		lineageTag: 3c71039e-bbf3-4201-8d97-375a06d6a207
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Financial Param Metric Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Financial Param Metric Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Financial Param Metric Fields'
+		isHidden
+		lineageTag: 026e3a74-0804-4b95-812c-c8c378cf1fac
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Financial Param Metric Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Financial Param Metric Order'
+		isHidden
+		formatString: 0
+		lineageTag: 0e48c81f-3ab3-4f6e-b9b3-14d0e72d2e31
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Financial Param Metric' = calculated
+		mode: import
+		source =
+				{
+				    ("Segment", NAMEOF('financials'[Segment]), 0),
+				    ("Product", NAMEOF('financials'[Product]), 1),
+				    ("Country", NAMEOF('financials'[Country]), 2),
+				    ("Discount Band", NAMEOF('financials'[Discount Band]), 3)
+				}
+
+	annotation PBI_Id = 688dddf5be164b2a9eaafbc217000c17
+

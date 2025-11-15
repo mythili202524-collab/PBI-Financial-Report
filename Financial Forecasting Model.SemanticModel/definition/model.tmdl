@@ -15,6 +15,7 @@ annotation PBI_ProTooling = ["DevMode"]
 ref table RepMeasures
 ref table Date
 ref table financials
+ref table 'Financial Param Metric'
 
 ref cultureInfo en-US
 
