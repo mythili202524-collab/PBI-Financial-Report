@@ -72,7 +72,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Midmarket'"
+                                "Value": "'Channel Partners'"
                               }
                             }
                           ]
@@ -523,6 +523,11 @@
           }
         }
       ]
+    },
+    "syncGroup": {
+      "groupName": "Segment",
+      "fieldChanges": true,
+      "filterChanges": true
     },
     "drillFilterOtherVisuals": true
   },

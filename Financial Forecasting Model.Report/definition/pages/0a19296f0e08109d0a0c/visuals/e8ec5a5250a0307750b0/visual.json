@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
-  "name": "d2e99cab20c0cb0e4255",
+  "name": "e8ec5a5250a0307750b0",
   "position": {
-    "x": 134.01131733816203,
-    "y": 38.90577507598784,
-    "z": 1000,
-    "height": 300,
-    "width": 214.95440729483283,
-    "tabOrder": 1000
+    "x": 136.45814977973569,
+    "y": 37.215859030837,
+    "z": 5001,
+    "height": 299.98237885462555,
+    "width": 214.27312775330395,
+    "tabOrder": 5001
   },
   "visual": {
     "visualType": "slicer",
@@ -32,7 +32,7 @@
                 }
               },
               "queryRef": "Date.Dt Hierarchy.Year",
-              "nativeQueryRef": "Dt Hierarchy Year",
+              "nativeQueryRef": "Dt Hierarchy Year1",
               "active": true
             },
             {
@@ -90,13 +90,26 @@
               "Date.Dt Hierarchy.Year"
             ],
             "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Date"
+                    }
+                  },
+                  "Property": "Year"
+                }
+              }
+            ],
             "isPinned": true
           },
           {
             "queryRefs": [
               "Date.Dt Hierarchy.QtrYear"
             ],
-            "isCollapsed": true
+            "isCollapsed": true,
+            "isPinned": true
           },
           {
             "queryRefs": [
@@ -116,6 +129,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Basic'"
+                }
+              }
+            },
+            "isInvertedSelectionMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -286,12 +306,17 @@
         }
       ]
     },
+    "syncGroup": {
+      "groupName": "Year",
+      "fieldChanges": true,
+      "filterChanges": true
+    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "983280142b603dc930a5",
+        "name": "8c272f11c1be5b460bdb",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -310,7 +335,7 @@
         "type": "Advanced"
       },
       {
-        "name": "1f9f3a30056eed2133d0",
+        "name": "d8db10168cc3c99e06e1",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -329,7 +354,7 @@
         "type": "Categorical"
       },
       {
-        "name": "9e207e11176cd8cb0d68",
+        "name": "baa9030018580b58d174",
         "field": {
           "HierarchyLevel": {
             "Expression": {
