@@ -68,7 +68,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'''financials''[Discount Band]'"
+                                "Value": "'''financials''[Segment]'"
                               }
                             }
                           ]
@@ -96,7 +96,7 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "'''financials''[Discount Band]'"
+                                      "Value": "'''financials''[Segment]'"
                                     }
                                   }
                                 ]
@@ -120,7 +120,7 @@
                         },
                         "valueMap": [
                           {
-                            "0": "Discount Band"
+                            "0": "Segment"
                           }
                         ]
                       }

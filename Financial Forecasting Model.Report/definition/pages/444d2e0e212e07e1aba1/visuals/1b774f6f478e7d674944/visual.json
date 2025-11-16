@@ -23,13 +23,13 @@
                       "Entity": "financials"
                     }
                   },
-                  "Property": "Discount Band"
+                  "Property": "Segment"
                 }
               },
-              "queryRef": "financials.Discount Band",
-              "nativeQueryRef": "Discount Band",
+              "queryRef": "financials.Segment",
+              "nativeQueryRef": "Segment",
               "active": true,
-              "displayName": "Discount Band"
+              "displayName": "Segment"
             }
           ],
           "fieldParameters": [
@@ -118,18 +118,13 @@
           "properties": {
             "text": {
               "expr": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Financial Param Metric"
-                        }
-                      },
-                      "Property": "Financial Param Metric"
+                    "SourceRef": {
+                      "Entity": "RepMeasures"
                     }
                   },
-                  "Function": 3
+                  "Property": "GrossSalesLbl"
                 }
               }
             },

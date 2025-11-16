@@ -7,8 +7,34 @@ table RepMeasures
 	measure SelSegment_Units = "Units Forecast by Year & Quarter for " & SELECTEDVALUE('financials'[Segment])& " segment - "  & SELECTEDVALUE('financials'[Country])& " country"
 		lineageTag: 8bc90e3b-f026-49e6-b826-21e526ff8d6d
 
-	measure SelFieldParam = FIRSTNONBLANKVALUE('Financial Param Metric'[Financial Param Metric])
+	measure SelFieldParam = ```
+			
+			var param=Values('Financial Param Metric'[Financial Param Metric Fields])
+			var label= IF(ISEMPTY(param)||ISBLANK([SelFieldParamValue]),BLANK(),FIRSTNONBLANK('Financial Param Metric'[Financial Param Metric Fields],'Financial Param Metric'[Financial Param Metric Fields]))
+			return SWITCH(label,
+			"'financials'[Product]","Product",
+			"'financials'[Segment]","Segment",
+			"'financials'[Country]","Country",
+			"'financials'[Discount Band]","Discount Band",
+			"")
+			
+			-- CONCATENATEX(Values('Financial Param Metric'[Financial Param Metric Fields]),[Financial Param Metric Fields],",")
+			
+			```
 		lineageTag: 4fa09b96-c9b6-4b47-933a-433eae03df71
+
+	measure SelFieldParamValue = ```
+			
+			 if(ISFILTERED('Financial Param Metric'[Financial Param Metric Fields]),SELECTEDVALUE('Financial Param Metric'[Financial Param Metric Order]),BLANK())
+			
+			
+			
+			```
+		formatString: 0
+		lineageTag: 41b15bb2-3f58-482d-8087-ffe2ae97c782
+
+	measure GrossSalesLbl = IF(ISBLANK([SelFieldParam])||[SelFieldParam]="","Gross Sales","Gross Sales by "&[SelFieldParam])
+		lineageTag: cff396c7-ca00-4f30-acd1-187f7f5a2768
 
 	column Column
 		isHidden
